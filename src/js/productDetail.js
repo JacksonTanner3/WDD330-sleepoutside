@@ -4,7 +4,7 @@ import { loadHeaderFooter, getParam } from './utils.mjs';
 
 async function setupPage() {
     // Load the header and footer
-    await loadHeaderFooter("../");
+    await loadHeaderFooter();
 
     // Get the product ID from the URL
     const productId = getParam('product');

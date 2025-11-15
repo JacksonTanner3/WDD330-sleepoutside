@@ -35,22 +35,16 @@ export async function loadTemplate(path) {
   return template;
 }
 
-export async function loadHeaderFooter(pathPrefix = "") {
-  const headerPath = `${pathPrefix}partials/header.html`;
-  const footerPath = `${pathPrefix}partials/footer.html`;
+export async function loadHeaderFooter() { 
+  const headerPath = "/partials/header.html";
+  const footerPath = "/partials/footer.html";
 
-  // 1. Get header template
   const headerTemplate = await loadTemplate(headerPath);
-  // 3. Find header element
   const headerElement = document.querySelector("#main-header");
-  // 5. Render header
   renderWithTemplate(headerTemplate, headerElement);
 
-  // 2. Get footer template
   const footerTemplate = await loadTemplate(footerPath);
-  // 4. Find footer element
   const footerElement = document.querySelector("#main-footer");
-  // 6. Render footer
   renderWithTemplate(footerTemplate, footerElement);
 }
 

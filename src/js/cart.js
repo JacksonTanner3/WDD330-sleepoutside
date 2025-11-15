@@ -34,7 +34,7 @@ function renderCartItems() {
 }
 
 // Load header/footer
-loadHeaderFooter('../');
+loadHeaderFooter();
 
 // Render the cart
 renderCartItems();
