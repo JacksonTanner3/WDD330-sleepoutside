@@ -36,8 +36,8 @@ export async function loadTemplate(path) {
 }
 
 export async function loadHeaderFooter(pathPrefix = "") {
-  const headerPath = `${pathPrefix}public/partials/header.html`;
-  const footerPath = `${pathPrefix}public/partials/footer.html`;
+  const headerPath = `${pathPrefix}partials/header.html`;
+  const footerPath = `${pathPrefix}partials/footer.html`;
 
   // 1. Get header template
   const headerTemplate = await loadTemplate(headerPath);
