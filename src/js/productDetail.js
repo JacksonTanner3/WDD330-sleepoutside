@@ -1,4 +1,4 @@
-import ProductData from './ProductData.mjs';
+import ExternalServices from './ExternalServices.mjs';
 import ProductDetail from './ProductDetail.mjs';
 import { loadHeaderFooter, getParam } from './utils.mjs';
 
@@ -10,7 +10,7 @@ async function setupPage() {
     const productId = getParam('product');
 
     // create an instance of the ProductData class.
-    const dataSource = new ProductData();
+    const dataSource = new ExternalServices();
 
     // create an instance of the ProductDetail class
     const product = new ProductDetail(productId, dataSource);

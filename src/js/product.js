@@ -1,16 +1,16 @@
 import { setLocalStorage } from './utils.mjs';
-import ProductData from './ProductData.mjs';
+import ExternalServices from './ExternalServices.mjs'; // CHANGED: Import ExternalServices
 import { loadHeaderFooter } from "./utils.mjs";
 
-// Call the function
-// We MUST pass "../" as the path prefix
 loadHeaderFooter("../");
 
-const dataSource = new ProductData('tents');
+// CHANGED: Use ExternalServices
+const dataSource = new ExternalServices('tents');
 
 function addProductToCart(product) {
   setLocalStorage('so-cart', product);
 }
+
 // add to cart button event handler
 async function addToCartHandler(e) {
   const product = await dataSource.findProductById(e.target.dataset.id);

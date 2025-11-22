@@ -35,7 +35,7 @@ export async function loadTemplate(path) {
   return template;
 }
 
-export async function loadHeaderFooter() { 
+export async function loadHeaderFooter() {
   const headerPath = "/partials/header.html";
   const footerPath = "/partials/footer.html";
 
@@ -53,6 +53,25 @@ export function getParam(param) {
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   return product;
+}
+
+export function alertMessage(message, scroll = true) {
+  const alert = document.createElement("div");
+  alert.classList.add("alert");
+  alert.innerHTML = `<p>${message}</p><span>X</span>`;
+
+  // This adds a listener to the alert to see if they clicked on the X
+  alert.addEventListener("click", function (e) {
+    if (e.target.tagName == "SPAN") {
+      main.removeChild(this);
+    }
+  });
+
+  const main = document.querySelector("main");
+  main.prepend(alert);
+
+  // mthis ensures they see the message
+  if (scroll) window.scrollTo(0, 0);
 }
 
 console.log("AAAA");
